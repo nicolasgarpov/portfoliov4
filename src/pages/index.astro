@@ -269,6 +269,17 @@ import Layout from '../layouts/Layout.astro';
       <!-- Collapsible Quick Form Container -->
       <div id="quick-form-container" class="hidden opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
         <div class="relative rounded-3xl border border-white/10 bg-[#0c1220]/80 p-8 md:p-12 shadow-2xl backdrop-blur-xl max-w-2xl mx-auto mt-4">
+          
+          <!-- Warning/Info Alert -->
+          <div class="flex items-start gap-3 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 text-xs text-amber-400 mb-6">
+            <svg class="h-5 w-5 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <div>
+              <span class="font-bold">Aviso de tiempo de respuesta:</span> Es posible que tardemos un poco más de lo habitual en contestar a través de este medio. Si necesitas una respuesta urgente o deseas adjuntar archivos, te sugerimos utilizar **WhatsApp** o **Correo Completo**.
+            </div>
+          </div>
+
           <form id="event-form" class="space-y-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
@@ -315,6 +326,12 @@ import Layout from '../layouts/Layout.astro';
           <div id="form-toast" class="hidden mt-6 p-4 rounded-xl border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-sm text-center font-medium">
             ¡Formulario enviado con éxito! (Modo Simulado. Conecta tus credenciales en el archivo `.env`).
           </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Modal de Opciones de Correo -->
   <div id="email-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
     <div class="relative w-full max-w-md rounded-3xl border border-white/10 bg-[#0c1220]/95 p-6 md:p-8 shadow-2xl backdrop-blur-xl transform scale-95 transition-transform duration-300" id="email-modal-card">
@@ -358,7 +375,7 @@ import Layout from '../layouts/Layout.astro';
         <button id="btn-copy-email" class="flex items-center gap-3.5 w-full p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-gold/30 text-slate-300 hover:text-white transition-all text-sm font-semibold text-left cursor-pointer group/item">
           <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold group-hover/item:scale-105 transition-transform">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 00-2-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 00-2-2H8a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
             </svg>
           </span>
           <div class="text-left">
