@@ -1,88 +1,54 @@
-# 🚀 Portfolio v4 — Ecosistema Profesional
+# 🏛️ Desarrollo Web de Alto Impacto para el Sector Legal y Político
 
-¡Bienvenido a tu nuevo espacio de trabajo de desarrollo! Este proyecto es una plantilla de portafolio moderna, ultra-rápida y altamente escalable. Está construida usando las últimas versiones de **Astro**, **Tailwind CSS v4** y cuenta con integración lista para **Firebase**.
+Este repositorio contiene la infraestructura digital de un portafolio web institucional de primer nivel, diseñado y optimizado específicamente para firmas de abogados, consultores políticos, eventos corporativos, congresos jurídicos y campañas electorales.
 
----
-
-## 🛠️ Tecnologías Utilizadas
-
-*   **[Astro v5](https://astro.build/)**: Framework web moderno diseñado para la velocidad. Utiliza la arquitectura de islas para entregar el menor JavaScript posible al cliente.
-*   **[Tailwind CSS v4](https://tailwindcss.com/)**: Motor de estilos de última generación, integrado de forma nativa a través de Vite. Ofrece procesamiento ultra veloz y un sistema de configuración simplificado desde hojas de estilo CSS.
-*   **[Firebase SDK v10+](https://firebase.google.com/)**: Configurado y listo para expandir tu aplicación con base de datos en tiempo real (Firestore), autenticación de usuarios y almacenamiento en la nube.
-*   **TypeScript**: Tipado estático para garantizar un código robusto y libre de errores en tiempo de desarrollo.
+El objetivo de este proyecto es proyectar confianza, sobriedad y excelencia técnica a través de un diseño web de vanguardia y un rendimiento inigualable.
 
 ---
 
-## 📂 Estructura del Proyecto
+## ✨ Filosofía de Diseño: ¿Qué nos hace mejores?
 
-El ecosistema cuenta con una arquitectura limpia organizada de la siguiente manera:
+La presencia digital en el sector institucional exige un balance perfecto entre seriedad y modernidad. Este proyecto destaca en los siguientes pilares:
 
-```text
-portfoliov4/
-├── .vscode/                 # Configuraciones optimizadas para VS Code
-│   ├── extensions.json      # Extensiones sugeridas (Astro, Tailwind CSS)
-│   └── settings.json        # Autocompletado experimental y auto-formateo
-├── src/
-│   ├── components/          # Componentes de UI reutilizables
-│   ├── layouts/
-│   │   └── Layout.astro     # Estructura HTML base con soporte SEO y fondo animado
-│   ├── lib/
-│   │   └── firebase.ts      # Inicialización y exportación de servicios Firebase
-│   ├── pages/
-│   │   └── index.astro      # Página principal interactiva y responsiva
-│   └── styles/
-│       └── global.css       # Hoja de estilos global e importación de Tailwind v4
-├── .env                     # Variables de entorno locales (Ignorado en Git)
-├── .env.template            # Plantilla guía para credenciales de Firebase
-├── astro.config.mjs         # Configuración del compilador Astro y Vite
-└── tsconfig.json            # Configuración de compilación TypeScript
-```
+### 1. Estética Premium y Curada (Glassmorphism & HSL)
+*   **Armonía de Colores**: Evitamos los colores genéricos. Utilizamos una paleta HSL a medida basada en **oro cepillado, azul medianoche profundo, pizarra y cristal translúcido** para transmitir prestigio y autoridad.
+*   **Efecto Vidrio (Glassmorphism)**: Paneles y barras de navegación translúcidos con desenfoque de fondo que añaden profundidad tridimensional y elegancia.
+*   **Orbes Ambientales**: Iluminación ambiental animada en segundo plano que mantiene el sitio dinámico y sofisticado sin distraer al lector.
+
+### 2. Rendimiento Ultra Rápido (Astro + Tailwind CSS v4)
+*   **Carga en < 1 Segundo**: Construido sobre **Astro**, el framework de rendimiento más rápido del mercado, que elimina el Javascript innecesario entregando solo HTML estático optimizado.
+*   **Tailwind CSS v4 Nativo**: Estilos compilados de última generación a nivel de Vite para garantizar transiciones fluidas a 60 fps y un diseño adaptable a cualquier tamaño de pantalla.
+
+### 3. Foco en Conversión y Fricción Cero
+*   **Contacto en 3 Canales**: Facilitamos que los clientes se comuniquen según su preferencia:
+    *   **WhatsApp Directo**: Chat inmediato pre-configurado para consultas rápidas.
+    *   **Selector de Correo Inteligente**: Un modal premium que permite al cliente escribir desde Gmail Web, Outlook Web, copiar la dirección o usar su app de escritorio, eliminando la molesta apertura forzada de Outlook clásico.
+    *   **Formulario Express**: Para cotizaciones rápidas sin necesidad de salir de la web.
+
+### 4. SEO & Mobile First
+*   Estructura semántica HTML5, metadatos optimizados y diseño adaptado al 100% para dispositivos móviles, garantizando indexación óptima en buscadores y legibilidad impecable desde teléfonos inteligentes.
 
 ---
 
-## ✨ Características de Diseño y UI
+## 💼 Casos de Uso del Portafolio
 
-Este espacio de trabajo incluye un diseño premium inicial con:
-*   **Estética Glassmorphism**: Barra de navegación y componentes flotantes con efectos de desenfoque traslúcidos (`backdrop-blur`).
-*   **Modo Oscuro Inmersivo**: Fondo enriquecido HSL oscuro con orbes luminosos ambientales difuminados en segundo plano para una apariencia premium.
-*   **Micro-interacciones**: Transiciones fluidas de escala y gradiente en botones y tarjetas de proyectos.
-*   **Formulario de Contacto Interactivo**: Script cliente integrado en Astro para simular estados de carga y notificaciones de éxito dinámicas.
+La estructura está preparada para presentar soluciones en las siguientes áreas:
 
----
-
-## 🔑 Configuración de Firebase
-
-Para activar las funcionalidades del backend en el futuro, renombra el archivo `.env.template` a `.env` y rellena tus credenciales del panel de Firebase:
-
-```env
-PUBLIC_FIREBASE_API_KEY="tu-api-key"
-PUBLIC_FIREBASE_AUTH_DOMAIN="tu-auth-domain"
-PUBLIC_FIREBASE_PROJECT_ID="tu-project-id"
-PUBLIC_FIREBASE_STORAGE_BUCKET="tu-storage-bucket"
-PUBLIC_FIREBASE_MESSAGING_SENDER_ID="tu-sender-id"
-PUBLIC_FIREBASE_APP_ID="tu-app-id"
-PUBLIC_FIREBASE_MEASUREMENT_ID="tu-measurement-id"
-```
-
-El archivo [src/lib/firebase.ts](file:///c:/Users/nicol/OneDrive/Escritorio/portfoliov4/src/lib/firebase.ts) importará y expondrá automáticamente las instancias de `db` (Firestore), `auth` (Autenticación) y `storage` (Almacenamiento) listas para usar.
+*   **Firmas y Socios de Abogados**: Secciones dedicadas a áreas de práctica, trayectorias y agendamiento de consultas.
+*   **Eventos y Congresos Jurídicos**: Landing pages optimizadas para el registro rápido de asistentes, visualización de agendas y expositores.
+*   **Campañas y propuestas Legislativas**: Páginas de aterrizaje de alto impacto optimizadas para captación de simpatizantes o voluntariado.
 
 ---
 
-## 🚀 Comandos de Desarrollo
+## 🛠️ Tecnologías y Configuración
 
-Ejecuta estos comandos en la raíz del proyecto para gestionarlo:
+El proyecto está construido bajo un entorno de desarrollo moderno:
 
-| Comando | Acción |
-| :--- | :--- |
-| `npm run dev` | Inicia el servidor de desarrollo local en `http://localhost:4321` |
-| `npm run build` | Compila el sitio estático optimizado para producción en `./dist/` |
-| `npm run preview` | Previsualiza localmente la compilación de producción |
-| `npm run astro check` | Realiza un diagnóstico de tipos y estructura del código |
+*   **Astro** — Framework base de alto rendimiento.
+*   **Tailwind CSS v4** — Motor de estilos integrado en Vite.
+*   **EmailJS** — Envío dinámico de consultas web directo a correo.
+*   **TypeScript** — Tipado estático para robustez del código.
 
----
-
-## 🔮 Futuras Ampliaciones Sugeridas
-
-1.  **Conexión Real de Contacto**: Reemplaza el temporizador en la sección de contacto de `index.astro` con un llamado real `addDoc(collection(db, "messages"), { ... })` para recibir los mensajes en tu Firestore Database.
-2.  **Panel de Administración**: Protege una ruta `/admin` usando Firebase Auth para editar tus proyectos directamente desde la web.
-3.  **Despliegue Continuo**: Vincula este repositorio con plataformas como **Vercel**, **Netlify** o **Firebase Hosting** para despliegues automáticos al hacer push a la rama `main`.
+### Comandos de desarrollo:
+*   `npm run dev` — Iniciar servidor de desarrollo en `localhost:4321`.
+*   `npm run build` — Compilar sitio estático optimizado en la carpeta `./dist/`.
