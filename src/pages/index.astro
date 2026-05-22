@@ -263,11 +263,18 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Interactive JavaScript -->
   <script>
+    import emailjs from '@emailjs/browser';
+
     const form = document.getElementById('event-form') as HTMLFormElement | null;
     const btnSubmit = document.getElementById('btn-submit') as HTMLButtonElement | null;
     const btnText = document.getElementById('btn-text') as HTMLSpanElement | null;
     const btnLoader = document.getElementById('btn-loader') as HTMLSpanElement | null;
     const toast = document.getElementById('form-toast') as HTMLDivElement | null;
+
+    // EmailJS keys from environment variables
+    const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
 
     if (form && btnSubmit && btnText && btnLoader && toast) {
       form.addEventListener('submit', async (e) => {
@@ -277,20 +284,59 @@ import Layout from '../layouts/Layout.astro';
         btnText.classList.add('hidden');
         btnLoader.classList.remove('hidden');
 
-        // Simulate sending to Firestore
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        const nameInput = document.getElementById('name') as HTMLInputElement | null;
+        const emailInput = document.getElementById('email') as HTMLInputElement | null;
+        const typeSelect = document.getElementById('project-type') as HTMLSelectElement | null;
+        const messageInput = document.getElementById('message') as HTMLTextAreaElement | null;
 
-        toast.classList.remove('hidden');
+        const templateParams = {
+          from_name: nameInput?.value || '',
+          reply_to: emailInput?.value || '',
+          project_type: typeSelect?.options[typeSelect.selectedIndex]?.text || '',
+          message: messageInput?.value || '',
+          to_email: 'nicolasgarpov64@gmail.com'
+        };
+
+        // Check if EmailJS keys are populated
+        const isEmailJSConfigured = SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY;
+
+        if (isEmailJSConfigured) {
+          try {
+            // Initialize EmailJS
+            emailjs.init(PUBLIC_KEY);
+
+            // Send real email
+            await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+
+            // Show real success message
+            toast.textContent = "¡Solicitud enviada con éxito! Te responderemos en la brevedad posible.";
+            toast.className = "mt-6 p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 text-sm text-center font-medium";
+            toast.classList.remove('hidden');
+            form.reset();
+          } catch (error) {
+            console.error("EmailJS Error:", error);
+            // Show error message
+            toast.textContent = "Hubo un error al enviar el correo. Por favor, reinténtalo más tarde.";
+            toast.className = "mt-6 p-4 rounded-xl border border-red-500/20 bg-red-500/5 text-red-400 text-sm text-center font-medium";
+            toast.classList.remove('hidden');
+          }
+        } else {
+          // Fallback simulation mode
+          await new Promise((resolve) => setTimeout(resolve, 1500));
+          
+          toast.textContent = "¡Formulario enviado con éxito (Modo Simulado)! Configura tus credenciales EmailJS en el archivo .env para enviar correos reales.";
+          toast.className = "mt-6 p-4 rounded-xl border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-sm text-center font-medium";
+          toast.classList.remove('hidden');
+          form.reset();
+        }
         
         btnSubmit.disabled = false;
         btnText.classList.remove('hidden');
         btnLoader.classList.add('hidden');
 
-        form.reset();
-
         setTimeout(() => {
           toast.classList.add('hidden');
-        }, 6000);
+        }, 7000);
       });
     }
   </script>
