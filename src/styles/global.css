@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #0d1b3e;
-  --color-brand-slate: #0b1120;
-  --color-brand-gold: #c5a059;
-  --color-brand-gold-hover: #e0be7a;
-  --color-brand-gold-glow: rgba(197, 160, 89, 0.15);
+  --color-brand-navy: #092257;
+  --color-brand-slate: #030814;
+  --color-brand-gold: #edd185;
+  --color-brand-gold-hover: #f4dfa6;
+  --color-brand-gold-glow: rgba(237, 209, 133, 0.12);
 }
 
 @layer base {
