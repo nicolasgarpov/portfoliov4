@@ -231,9 +231,9 @@ import Layout from "../layouts/Layout.astro";
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         <!-- Project 1: Promotion Flyers -->
-        <div class="group relative rounded-3xl border border-white/5 bg-[#0c111e]/60 overflow-hidden hover:border-brand-gold/20 transition-all duration-300 flex flex-col justify-between">
+        <div class="group relative rounded-3xl border border-white/5 bg-[#0c111e]/60 overflow-hidden hover:border-brand-gold/20 transition-all duration-300 flex flex-col justify-between cursor-pointer animate-fade-in" data-project="flyers">
           <div>
-            <div class="h-56 overflow-hidden border-b border-white/5 relative cursor-pointer" data-project="flyers">
+            <div class="h-56 overflow-hidden border-b border-white/5 relative">
               <img src="/images/flyer-4-junio.jpg" alt="Flyer Congreso Litigación Oral" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span class="px-4 py-2 rounded-full bg-brand-gold text-brand-slate text-xs font-bold shadow-lg">Ver Detalles 🔍</span>
@@ -252,7 +252,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-gold-hover transition-colors cursor-pointer" data-project="flyers">
+            <button class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-gold-hover transition-colors">
               Ver Detalles y Diseños (5)
               <svg class="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -262,9 +262,9 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <!-- Project 2: Official Certificate -->
-        <div class="group relative rounded-3xl border border-white/5 bg-[#0c111e]/60 overflow-hidden hover:border-brand-gold/20 transition-all duration-300 flex flex-col justify-between">
+        <div class="group relative rounded-3xl border border-white/5 bg-[#0c111e]/60 overflow-hidden hover:border-brand-gold/20 transition-all duration-300 flex flex-col justify-between cursor-pointer animate-fade-in" data-project="certificado">
           <div>
-            <div class="h-56 overflow-hidden border-b border-white/5 relative cursor-pointer" data-project="certificado">
+            <div class="h-56 overflow-hidden border-b border-white/5 relative">
               <img src="/images/certificado-asistencia.jpg" alt="Certificado de Asistencia Oficial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span class="px-4 py-2 rounded-full bg-brand-gold text-brand-slate text-xs font-bold shadow-lg">Ver Detalles 🔍</span>
@@ -283,7 +283,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-gold-hover transition-colors cursor-pointer" data-project="certificado">
+            <button class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-gold-hover transition-colors">
               Ver Detalles y Certificado
               <svg class="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -293,9 +293,9 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <!-- Project 3: Schedule Grid -->
-        <div class="group relative rounded-3xl border border-white/5 bg-[#0c111e]/60 overflow-hidden hover:border-brand-gold/20 transition-all duration-300 flex flex-col justify-between">
+        <div class="group relative rounded-3xl border border-white/5 bg-[#0c111e]/60 overflow-hidden hover:border-brand-gold/20 transition-all duration-300 flex flex-col justify-between cursor-pointer animate-fade-in" data-project="grilla">
           <div>
-            <div class="h-56 overflow-hidden border-b border-white/5 relative cursor-pointer" data-project="grilla">
+            <div class="h-56 overflow-hidden border-b border-white/5 relative">
               <img src="/images/grilla-expositores.jpg" alt="Grilla General del Congreso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span class="px-4 py-2 rounded-full bg-brand-gold text-brand-slate text-xs font-bold shadow-lg">Ver Detalles 🔍</span>
@@ -314,7 +314,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-gold-hover transition-colors cursor-pointer" data-project="grilla">
+            <button class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-gold-hover transition-colors">
               Ver Detalles y Banner
               <svg class="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -1020,18 +1020,37 @@ import Layout from "../layouts/Layout.astro";
     const modalSpecVal1 = document.getElementById('modal-spec-val-1');
     const modalSpecLabel2 = document.getElementById('modal-spec-label-2');
     const modalSpecVal2 = document.getElementById('modal-spec-val-2');
-    
+
     const closeProjectModalBtn = document.getElementById('btn-close-project-modal');
     const prevModalBtn = document.getElementById('btn-prev-modal');
     const nextModalBtn = document.getElementById('btn-next-modal');
     const sliderCounter = document.getElementById('modal-slider-counter');
 
+    console.log("Project Details Modal initialized in DOM. Elements:", {
+      projectModal: !!projectModal,
+      projectModalCard: !!projectModalCard,
+      modalImg: !!modalImg,
+      closeProjectModalBtn: !!closeProjectModalBtn
+    });
+
     let currentImages: string[] = [];
     let currentImgIndex = 0;
 
     const openProjectModal = (projectId: string) => {
+      console.log("openProjectModal called with ID:", projectId);
       const data = projectsData[projectId];
-      if (!data || !projectModal || !projectModalCard || !modalImg) return;
+      if (!data) {
+        console.error("Project data not found for ID:", projectId);
+        return;
+      }
+      if (!projectModal || !projectModalCard || !modalImg) {
+        console.error("Missing critical modal elements in openProjectModal!", {
+          projectModal: !!projectModal,
+          projectModalCard: !!projectModalCard,
+          modalImg: !!modalImg
+        });
+        return;
+      }
 
       // Populate Text & Info
       if (modalTitle) modalTitle.textContent = data.title;
@@ -1066,6 +1085,7 @@ import Layout from "../layouts/Layout.astro";
       projectModal.classList.add('opacity-100');
       projectModalCard.classList.remove('scale-95');
       projectModalCard.classList.add('scale-100');
+      console.log("Modal display styles updated successfully.");
     };
 
     const updateModalSlider = () => {
@@ -1110,11 +1130,13 @@ import Layout from "../layouts/Layout.astro";
 
     // Attach click events
     document.querySelectorAll('[data-project]').forEach(el => {
+      const id = el.getAttribute('data-project');
+      console.log("Bound data-project element in DOM. Project ID:", id, "Element:", el);
       el.addEventListener('click', (e) => {
+        console.log("Element clicked. Event target:", e.target, "Bound element ID:", id);
         e.preventDefault();
         e.stopPropagation();
-        const projectId = el.getAttribute('data-project');
-        if (projectId) openProjectModal(projectId);
+        if (id) openProjectModal(id);
       });
     });
 
